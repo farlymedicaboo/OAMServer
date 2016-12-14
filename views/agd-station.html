@@ -1,0 +1,67 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="animated fadeIn">
+        <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        All AGD Stations
+                    </div>
+                    <table class="table table-hover table-outline mb-0 hidden-sm-down">
+                        <thead class="thead-default">
+                        <tr>
+                            <th text-xs-center>Station Name</th>
+                            <th>Address</th>
+                            <th>Latitude Longitude</th>
+                            <th>Telephone</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for data in stations %}
+                        <tr>
+                            <td class="text-xs-center">
+                                <strong>{{ data.nama }}</strong>
+                            </td>
+                            <td>
+                                <div>{{ data.alamat }}</div>
+                                <div class="small text-muted">
+                                    {% if data.wilayah == "pusat" %}
+                                    Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta
+                                    {% elif data.wilayah == "utara" %}
+                                    Kota Jakarta Utara, Daerah Khusus Ibukota Jakarta
+                                    {% elif data.wilayah == "barat" %}
+                                    Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta
+                                    {% elif data.wilayah == "selatan" %}
+                                    Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta
+                                    {% else %}
+                                    Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta
+                                    {% endif %}
+                                </div>
+                            </td>
+                            <td>
+                                <small class="text-muted">{{ data.latitude }}, {{ data.longitude }}</small>
+                            </td>
+                            <td>
+                                <div>{{ data.telepon }}</div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!--/.col-->
+            </div>
+            <!--/.row-->
+        </div>
+
+
+    </div>
+</div>
+
+<!-- /.conainer-fluid -->
+{% endblock %}

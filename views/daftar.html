@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
+
+    <title>OAM - Skrisi Atikah Chairunnisa</title>
+
+    <!-- Icons -->
+    <link href="/stylesheets/font-awesome.min.css" type="text/css" rel="stylesheet" >
+    <link href="/stylesheets/simple-line-icons.css" type="text/css" rel="stylesheet" >
+
+    <!-- Main styles for this application -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">-->
+    <link href="/stylesheets/style.css" type="text/css" rel="stylesheet" >
+</head>
+
+<body>
+<div class="container d-table">
+    <div class="d-100vh-va-middle">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card mx-2">
+                    <div class="card-block p-2">
+                        <h1>Register</h1>
+                        <p class="text-muted">Create your account</p>
+                        {% include "flash.html" %}
+                        <form class="form form-validate floating-label" id="register_form" action="" method="post" novalidate>
+                        <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="icon-user"></i>
+                                </span>
+                            <input type="text" class="form-control" placeholder="Username" id="username"
+                                   name="username" autofocus required>
+                        </div>
+
+                        <div class="input-group mb-1">
+                                <span class="input-group-addon"><i class="icon-lock"></i>
+                                </span>
+                            <input type="password" class="form-control" placeholder="Password" id="password"
+                                   name="password" autofocus required>
+                        </div>
+
+                            <button type="submit" class="btn btn-block btn-success">Create Account</button>
+                            <button type="button" class="btn btn-block btn-danger"
+                                    onclick="window.location.href='/masuk'">Back</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap and necessary plugins -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/tether/dist/js/tether.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+<script>
+    $('#register_form').attr('action', '/daftar');
+</script>
+
+
+</body>
+
+</html>

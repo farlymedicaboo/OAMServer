@@ -1,0 +1,913 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+<!-- Breadcrumb -->
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">Home</li>
+    <li class="breadcrumb-item"><a href="#">Admin</a>
+    </li>
+    <li class="breadcrumb-item active">Dashboard</li>
+
+    <!-- Breadcrumb Menu-->
+    <li class="breadcrumb-menu">
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <a class="btn btn-secondary" href="./"><i class="icon-graph"></i> Dashboard</a>
+        </div>
+    </li>
+</ol>
+
+
+<div class="container-fluid">
+    <div class="animated fadeIn">
+        <div class="row">
+            <div class="col-sm-6 col-lg-3">
+                <div class="card card-inverse card-primary">
+                    <div class="card-block pb-0">
+                        <div class="btn-group float-xs-right">
+                            <button type="button" class="btn btn-transparent active p-0" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                <i class="icon-docs"></i>
+                            </button>
+                        </div>
+                        <h4 class="mb-0">{{ orderLength }}</h4>
+                        <p>Total Order</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="card card-inverse card-info">
+                    <div class="card-block pb-0">
+                        <button type="button" class="btn btn-transparent active p-0 float-xs-right">
+                            <i class="icon-user"></i>
+                        </button>
+                        <h4 class="mb-0">{{ masyrakatLength }}</h4>
+                        <p>Total User</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="card card-inverse card-warning">
+                    <div class="card-block pb-0">
+                        <button type="button" class="btn btn-transparent active p-0 float-xs-right">
+                            <i class="icon-star"></i>
+                        </button>
+                        <h4 class="mb-0">24</h4>
+                        <p>Total Station</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <div class="card card-inverse card-danger">
+                    <div class="card-block pb-0">
+                        <button type="button" class="btn btn-transparent active p-0 float-xs-right">
+                            <i class="icon-speedometer"></i>
+                        </button>
+                        <h4 class="mb-0">43</h4>
+                        <p>Total Ambulance</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--/row-->
+
+        <!--<div class="card">-->
+            <!--<div class="card-block">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-xs-5">-->
+                        <!--<h4 class="card-title">Order</h4>-->
+                        <!--<div class="small text-muted" style="margin-top:-10px;">November 2016</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-xs-7">-->
+                        <!--<div class="btn-toolbar float-xs-right" role="toolbar" aria-label="Toolbar with button groups">-->
+                            <!--<div class="btn-group" data-toggle="buttons" aria-label="First group">-->
+                                <!--<label class="btn btn-outline-secondary">-->
+                                    <!--<input type="radio" name="options" id="option1">Day-->
+                                <!--</label>-->
+                                <!--<label class="btn btn-outline-secondary active">-->
+                                    <!--<input type="radio" name="options" id="option2" checked="">Month-->
+                                <!--</label>-->
+                                <!--<label class="btn btn-outline-secondary">-->
+                                    <!--<input type="radio" name="options" id="option3">Year-->
+                                <!--</label>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;<div class="btn-group hidden-sm-down" role="group" aria-label="Second group">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<button type="button" class="btn btn-primary"><i class="icon-cloud-download"></i>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="chart-wrapper" style="height:300px;margin-top:40px;">-->
+                    <!--<canvas id="main-chart" height="300"></canvas>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="card-footer">-->
+                <!--<ul>-->
+                    <!--<li>-->
+                        <!--<div class="text-muted">Handled Order</div>-->
+                        <!--<strong>29.703 Users</strong>-->
+                        <!--<progress class="progress progress-xs progress-success" value="100" max="100">40%</progress>-->
+                    <!--</li>-->
+                    <!--<li class="hidden-sm-down">-->
+                        <!--<div class="text-muted">Unhandled Order</div>-->
+                        <!--<strong>24.093 Unique Users</strong>-->
+                        <!--<progress class="progress progress-xs progress-info" value="100" max="100">20%</progress>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<div class="text-muted">Prank Order</div>-->
+                        <!--<strong>78.706 Views</strong>-->
+                        <!--<progress class="progress progress-xs progress-warning" value="100" max="100">60%</progress>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--/.card-->
+
+        <!--map-->
+
+        <div class="card">
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <h4 class="card-title">AGD Stations Map</h4>
+                        <div class="small text-muted" style="margin-top:-10px;">07 November 2016</div>
+                    </div>
+                </div>
+                <div class="gm-map" id="dashboardmap">
+                    <!--<canvas id="main-chart" height="300"></canvas>-->
+                </div>
+            </div>
+        </div>
+
+        <!--end map-->
+
+        <!--<div>stations.0.nama</div>-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        All AGD Stations
+                    </div>
+                    <table class="table table-hover table-outline mb-0 hidden-sm-down">
+                        <thead class="thead-default">
+                        <tr>
+                            <th text-xs-center>Station Name</th>
+                            <th>Address</th>
+                            <th>Latitude Longitude</th>
+                            <th>Telephone</th>
+                        </tr>
+                        </thead>
+                        <!--<tbody>-->
+                        <!--&lt;!&ndash;PUSAT&ndash;&gt;-->
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Puskesmas Kecamatan Senen</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jl. Kramat VII No.31, Kenari, Senen</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.189910, 106.842812</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 3146194</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>RSPAD Gatot Soebroto</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jalan Dokter Abdul Rahman Saleh No.24</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.176813, 106.836745</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 3441008</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Puskesmas Cempaka Putih</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jl. Cempaka Putih Barat XIX No.12, RW.11, Cemp. Putih Bar, Cemp. Putih</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10520-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.182547, 106.865623</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 4219548</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>RSUD Tarakan</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jalan Kyai Caringin No.7</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10150-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.171560, 106.810187</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 3842934</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--&lt;!&ndash;UTARA&ndash;&gt;-->
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Puskesmas Kelapa Gading</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jl. Pelepah Elok Blok HF7, Kelapa Gading Barat, Kelapa Gading</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Utara, Daerah Khusus Ibukota Jakarta 14240-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.155641, 106.904561</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 45853300</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Puskesmas Cilincing</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jl. Madya Kebantenan No.4, RT.4/RW.2, Semper Tim., Cilincing</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Utara, Daerah Khusus Ibukota Jakarta 14130-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.113030, 106.926287</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 4404759</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>AGD Dinas Kesehatan Jakarta</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jalan Sunter Permai Raya No.1, Sunter Podomoro, Papanggo</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Utara, Daerah Khusus Ibukota Jakarta-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.129858, 106.861474</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 65303118</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Dinas Pemadam Kebakaran Permai</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Ruko Cemp. Putih Permai, Jl. Letjend Suprapto, RT.12/RW.5, Cempaka Putih</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Utara, Daerah Khusus Ibukota Jakarta 10520-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.171137, 106.866119</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 63855357</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Kantor Walikota Jakarta Utara</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jl. Swasembada Barat XIII No.41, Kb. Bawang, Tj. Priok</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Utara, Daerah Khusus Ibukota Jakarta 14320-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.121851, 106.886644</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 4390581</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--&lt;!&ndash;BARAT&ndash;&gt;-->
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Kantor Walikota Jakarta Barat</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jalan Raya Kembangan No.2, Kembangan</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11610-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.185308, 106.737795</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 5821740</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Puskesmas Kembangan</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Komplek Perum Walikota, Jl. H. Saaba, Kel. Meruya Selatan, Kembangan</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11610-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.214530, 106.724228</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 5859081</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Puskesmas Kalideres</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Perumahan Citra III Blok E3 RW. 13, Pegadungan, Kalideres</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11830-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.127051, 106.709118</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 54390576</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Puskesmas Grogol Petamburan</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Komplek Taman Duta Mas, Jl. Wijaya Kusuma 3 Blok. F No. 1</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11460-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.149581, 106.776740</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 5648379</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Puskesmas Cengkareng</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jalan Kamal Raya No. 02, Cengkareng Bar., Cengkareng</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11730-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.144374, 106.728240</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 29038167</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--&lt;!&ndash;SELATAN&ndash;&gt;-->
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Puskesmas Tebet</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jl. Tebet Timur II, RT.06 / TW.05, Tebet, Tebet Tim., Tebet</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12820-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.235449, 106.856764</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 8350632</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Puskesmas Mampang Prapatan</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jalan Tegal Parang Utara No.1, Tegal Parang, Mampang Prpt.</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12790-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.245153, 106.834104</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 7943509</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Puskesmas Kebayoran Lama</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jl. Ciputat Raya RT05/RW01, Kebayoran Lama, Jl. Ciputat Raya, Kby. Lama</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12240-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.249720, 106.778385</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 7245439</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>RSUP Fatmawati</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jl. RS Fatmawati, Cilandak Barat, Cilandak</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12430-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.294899, 106.795493</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 7501524</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Puskesmas Jagakarsa</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jl Batu No. 1 RT 013 / RW09, Srengseng Sawah, Jagakarsa</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12630-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.352123, 106.813804</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 7874051</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--&lt;!&ndash;TIMUR&ndash;&gt;-->
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>RSU Adhyaksa</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jl. Hankam Raya No. 60, Ceger, Cipayung</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13890-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.307787, 106.892743</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 29462345</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Pos Polisi Dukuh</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jalan Bambu Apus, Bambu Apus, Cipayung, Bambu Apus, Cipayung</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13890-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.314279, 106.894579</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div> -</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Puskesmas Jatinegara</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jl. Raya Bekasi KM 18, Cakung, Jatinegara, Jakarta Timur</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13930-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.203294, 106.904999</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 4612345</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+
+                        <!--<tr>-->
+                            <!--<td class="text-xs-center">-->
+                                <!--<strong>Pos Polisi Kebon Nanas</strong>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>Jl. Ahmad Yani, RT.8/RW.5, Pisangan Tim</div>-->
+                                <!--<div class="small text-muted">-->
+                                    <!--Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13210-->
+                                <!--</div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<small class="text-muted">-6.208924, 106.874306</small>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                                <!--<div>(021) 8197592</div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
+                        <!--</tbody>-->
+
+                        <tbody>
+                        {% for data in stations %}
+                        <tr>
+                            <td class="text-xs-center">
+                                <strong>{{ data.nama }}</strong>
+                            </td>
+                            <td>
+                                <div>{{ data.alamat }}</div>
+                                <div class="small text-muted">
+                                    {% if data.wilayah == "pusat" %}
+                                    Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta
+                                    {% elif data.wilayah == "utara" %}
+                                    Kota Jakarta Utara, Daerah Khusus Ibukota Jakarta
+                                    {% elif data.wilayah == "barat" %}
+                                    Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta
+                                    {% elif data.wilayah == "selatan" %}
+                                    Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta
+                                    {% else %}
+                                    Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta
+                                    {% endif %}
+                                </div>
+                            </td>
+                            <td>
+                                <small class="text-muted">{{ data.latitude }}, {{ data.longitude }}</small>
+                            </td>
+                            <td>
+                                <div>{{ data.telepon }}</div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+                <!--/.col-->
+            </div>
+            <!--/.row-->
+        </div>
+
+
+    </div>
+</div>
+<!-- /.conainer-fluid -->
+{% endblock %}
+
+{% block scripts %}
+<script>
+    {% for data in stations%}
+    $(function () {
+        $('#dashboardmap')
+                .gmap3({
+                    center: [-6.2146200, 106.8451300],
+                    zoom: 10
+                })
+                .marker([
+                    {position: [{{ data.latitude | safe}}, {{ data.longitude | safe}}]},
+                    {icon: "http://maps.google.com/mapfiles/marker_red.png"}
+                ]);
+    });
+    {% endfor %}
+
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.176813, 106.836745]},
+//                    {address: "", icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.182547, 106.865623]},
+//                    {address: "", icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.171560, 106.810187]},
+//                    {address: "", icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.155641, 106.904561]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.113030, 106.926287]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.129858, 106.861474]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.171137, 106.866119]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.121851, 106.886644]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.185308, 106.737795]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.214530, 106.724228]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.127051, 106.709118]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.149581, 106.776740]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.144374, 106.728240]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.235449, 106.856764]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.245153, 106.834104]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.249720, 106.778385]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.294899, 106.795493]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.352123, 106.813804]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.307787, 106.892743]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.314279, 106.894579]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.203294, 106.904999]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+//
+//    $(function () {
+//        $('#dashboardmap')
+//                .gmap3({
+//                    center: [-6.2146200, 106.8451300],
+//                    zoom: 10
+//                })
+//                .marker([
+//                    {position: [-6.208924, 106.874306]},
+//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
+//                ]);
+//    });
+</script>
+{% endblock %}

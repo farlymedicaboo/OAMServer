@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Kamar Medis</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="your,keywords">
+		<meta name="description" content="Kamar Medis by Medicaboo">
+		<link type="text/css" rel="stylesheet" href="/css/pace.css">
+		<link type="text/css" rel="stylesheet" href="/css/font-roboto.css">
+		<link type="text/css" rel="stylesheet" href="/css/hover.css">
+		<link type="text/css" rel="stylesheet" href="/css/fa-animation.min.css">
+		<link type="text/css" rel="stylesheet" href="/css/editor.css"/>
+		<link type="text/css" rel="stylesheet" href="/css/kamarmedis-main.css"/>
+		<link type="text/css" rel="stylesheet" href="/css/kamarmedis-material.css"/>
+		<link type="text/css" rel="stylesheet" href="/css/kamarmedis-fa.min.css"/>
+		<link type="text/css" rel="stylesheet" href="/css/kamarmedis-icon-material.min.css"/>
+		<link type="text/css" rel="stylesheet" href="/css/style.css"/>
+		{% block css %}{% endblock %}
+	</head>
+	<body class="header-fixed menubar-pin">
+		<header id="header">
+			<div aria-busy='true'  aria-label='Loading, please wait.'  role='progressbar'></div>
+			<div class="headerbar">
+				<div class="headerbar-left">
+					<ul class="header-nav header-nav-options">
+						<li class="header-nav-brand" >
+							<div class="brand-holder">
+							  <a class="btn btn-icon-toggle faa-horizontal animated-hover" onclick='history.back(-1)'><i class="bigsfa fa fa-caret-left" aria-hidden="true"></i></a>
+							</div>
+						</li>
+						<li class="header-nav-brand" >
+							<div class="brand-holder">
+								<div>
+									<!--<img class="logohead img-responsive" src="/img/kmsmall.png">-->
+								</div>
+							</div>
+						</li>
+						<li>
+							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+								<i class="bigsfamenu fa fa-align-justify" aria-hidden="true"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="headerbar-right hidden-xs">
+					<ul class="header-nav header-nav-options">
+						<li class="dropdown">
+
+							<!-- NOTIF -->
+							<!--<div class="dropdown">-->
+							  <!--<a id="dLabel" role="button" data-toggle="dropdown" data-target="#" class="btn btn-lg marginup&#45;&#45;6 btn-icon-toggle">-->
+							  	<!--<div id="notifIcon"></div>-->
+							  <!--</a>-->
+							  <!---->
+							  <!--<ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">-->
+							    <!---->
+							    <!--<div class="notification-heading"><h4 class="menu-title">PEMBERITAHUAN</h4></div>-->
+							    <!--<li class="divider"></li>-->
+							   <!--<div id="isiNotif" class="notifications-wrapper">-->
+							   <!--</div>-->
+							    <!--<li class="divider"></li>-->
+							    	<!--<a style="cursor: pointer" onclick="location.href='/pemberitahuan'" class="notification-footer"><small class="menu-title">Lihat Semua Pemberitahuan <i class="fa fa-caret-right"></i></small></a>-->
+							  <!--</ul>-->
+							  <!---->
+							<!--</div>-->
+							<!-- NOTIF -->
+
+						</li>
+						<li>
+							<a class="btn btn-flat noaction marginup--6" data-toggle="dropdown">
+            		<h4 id="clockbox" class="white noaction"></h4>
+							</a>
+						</li>
+						<li>
+							<a style="cursor: pointer" onclick="location.href='/keluar'" class="btn btn-lg marginup--6 btn-icon-toggle" data-toggle="tooltip" title="Kunci Akun" data-placement="bottom">
+								<i class="bigsfamenu fa fa-sign-out faa-passing animated-hover" aria-hidden="true"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		
+		<div id="base">
+			<div class="offcanvas">
+
+			</div>
+			<div id="content">
+				{% block content %}{% endblock %}
+			</div>
+
+			<div id="menubar" class="menubar-inverse">
+				<div class="menubar-fixed-panel">
+					<div>
+						<a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+							<i class="md md-menu"></i>
+						</a>
+					</div>
+				</div>
+				<div class="menubar-scroll-panel">
+
+					<ul id="main-menu" class="gui-controls">
+						<li>
+							<a style="cursor: pointer" onclick="location.href='/'">
+								<div class="gui-icon"><i class="fa fa-home faa-vertical animated-hover"></i></div>
+								<span class="title whites">Beranda</span>
+							</a>
+						</li>
+						<li>
+							<a style="cursor: pointer" onclick="location.href='/profil'">
+								<div class="gui-icon"><i class="fa fa-user faa-vertical animated-hover"></i></div>
+								<span class="title whites">Profil</span>
+							</a>
+						</li>
+						<li>
+							<a style="cursor: pointer" onclick="location.href='/dokter'">
+								<div class="gui-icon"><i class="fa fa-user-md faa-vertical animated-hover"></i></div>
+								<span class="title whites">Dokter</span>
+							</a>
+						</li>
+						<li>
+							<a style="cursor: pointer" onclick="location.href='/rawat-jalan'">
+								<div class="gui-icon"><i class="fa fa-stethoscope faa-vertical animated-hover"></i></div>
+								<span class="title whites">Rawat Jalan</span>
+							</a>
+						</li>
+						<li>
+							<a style="cursor: pointer" onclick="location.href='/rawat-inap'">
+								<div class="gui-icon"><i class="fa fa-heartbeat faa-vertical animated-hover"></i></div>
+								<span class="title whites">Rawat Inap</span>
+							</a>
+						</li>
+						<li>
+							<a style="cursor: pointer" onclick="location.href='/rawat-inap/data'">
+								<div class="gui-icon"><i class="fa fa-users faa-vertical animated-hover"></i></div>
+								<span class="title whites">Pasien</span>
+							</a>
+						</li>
+						<li>
+							<a style="cursor: pointer" onclick="location.href='/pengaturan'">
+								<div class="gui-icon"><i class="fa fa-gear faa-vertical animated-hover"></i></div>
+								<span class="title whites">Pengaturan</span>
+							</a>
+						</li>
+
+					</ul>
+					
+					<a class="btn menubar-foot-panel faa-pulse animated-hover" style="cursor: pointer" onclick="location.href='/bantuan'">
+						<small class="no-linebreak hidden-folded">
+              	<h4 class="opacity-75"><i class="fa fa-question-circle"></i> Halaman Bantuan</h4>
+						</small>
+					</a>
+				</div><!--end .menubar-scroll-panel-->
+			</div>
+
+
+		</div>
+
+		<footer class="footer" style="background-color:#cfcfcf;">
+		    <div class="pull-right padfooter">
+		    	<!--<span><b>{{ nameRs }}</b> | </span><span class="opacity-75">Copyright &copy; 2016</span> <strong>Kamarmedis</strong>-->
+		    </div>
+		</footer>
+		<!--<script src="/js/jquery-1.11.2.min.js"></script>-->
+		<!--<script src="/js/pace.min.js"></script>-->
+		<!--<script src="/js/jquery-migrate-1.2.1.min.js"></script>-->
+		<!--<script src="/js/main.min.js"></script>-->
+		<!--<script src="/js/spin.min.js"></script>-->
+		<!--<script src="/js/jquery.autosize.min.js"></script>-->
+		<!--<script src="/js/jquery.nanoscroller.min.js"></script>-->
+		<!--<script src="/js/jquery.validate.min.js"></script>-->
+		<!--<script src="/js/additional-methods.min.js"></script>-->
+		<!--<script src="/js/App.js"></script>-->
+		<!--<script src="/js/AppNavigation.js"></script>-->
+		<!--<script src="/js/AppCard.js"></script>-->
+		<!--<script src="/js/AppForm.js"></script>-->
+		<!--<script src="/js/AppNavSearch.js"></script>-->
+		<!--<script src="/js/AppVendor.js"></script>-->
+		<!--<script src="/js/utility.js"></script>-->
+		<!--<script src="/js/AppOffcanvas.js"></script>-->
+		<!--<script src="/js/own.js"></script>-->
+		<!--<script>-->
+			<!--if (!!window.EventSource) {-->
+				<!--var source = new EventSource('/getNotif');-->
+
+				<!--source.addEventListener('message', function(e) {-->
+					<!--var dataNotif = JSON.parse(e.data);-->
+					<!--if (dataNotif == 'error') {-->
+						<!--console.log('error occured on the server');-->
+					<!--} else {-->
+						<!--var notifIcon;-->
+						<!--var html;-->
+						<!--var getHtml=[];-->
+						<!--if (dataNotif.length==0) {-->
+							<!--getHtml = "<a class='content' style='pointer-events: none;'>"+-->
+								       <!--"<div class='notification-item'>"+-->
+								        <!--"<h4 class='item-title'>Tidak Ada Pemberitahuan</h4>"+-->
+								      <!--"</div>"+-->
+								    <!--"</a>"-->
+							<!--notifIcon = "<i class='md md-notifications-none'></i>"-->
+						<!--} else {-->
+							<!--for (var i = dataNotif.length-1; i >= 0; i&#45;&#45;) {-->
+								<!--if (dataNotif[i].title=="INFORMASI") {-->
+									<!--html = "<a class='content' href='/readOrder/"+dataNotif[i]._id+"/"+dataNotif[i].urlRef+"'>"+-->
+									       <!--"<div class='notification-item'>"+-->
+									       <!--"<h4 class='item-title'><i class='fa fa-envelope faa-shake animated'>&nbsp;&nbsp;</i>"+dataNotif[i].title+"</h4>"+-->
+									       <!--"<div class='item-info'>"+dataNotif[i].note+"</div>"+-->
+									       <!--"</div>"+-->
+									  	   <!--"</a>"-->
+								<!--} else if (dataNotif[i].title=="DIBATALKAN") {-->
+									<!--html = "<a class='content' href='/read/"+dataNotif[i]._id+"/dibatalkan'>"+-->
+									       <!--"<div class='notification-item'>"+-->
+									       <!--"<h4 class='item-title'><i class='fa fa-envelope faa-shake animated'>&nbsp;&nbsp;</i>"+dataNotif[i].title+"</h4>"+-->
+									       <!--"<div class='item-info'>"+dataNotif[i].note+"</div>"+-->
+									       <!--"</div>"+-->
+									  	   <!--"</a>"-->
+								<!--} else if (dataNotif[i].title=="PEMESANAN") {-->
+									<!--html = "<a class='content' href='/read/"+dataNotif[i]._id+"/pemesanan'>"+-->
+									       <!--"<div class='notification-item'>"+-->
+									       <!--"<h4 class='item-title'><i class='fa fa-envelope faa-shake animated'>&nbsp;&nbsp;</i>"+dataNotif[i].title+"</h4>"+-->
+									       <!--"<div class='item-info'>"+dataNotif[i].note+"</div>"+-->
+									       <!--"</div>"+-->
+									  	   <!--"</a>"-->
+								<!--} else {-->
+									<!--html = "<a class='content' href='/readOrder/"+dataNotif[i]._id+"/"+dataNotif[i].urlRef+"'>"+-->
+									       <!--"<div class='notification-item'>"+-->
+									       <!--"<h4 class='item-title'><i class='fa fa-envelope faa-shake animated'>&nbsp;&nbsp;</i>"+dataNotif[i].title+"</h4>"+-->
+									       <!--"<div class='item-info'>"+dataNotif[i].note+"</div>"+-->
+									       <!--"</div>"+-->
+									  	   <!--"</a>"-->
+								<!--}-->
+								<!--getHtml.push(html);-->
+							<!--}-->
+							<!--notifIcon = "<i class='md md-notifications faa-ring animated'></i><sup class='badge bg-orange white'>"+dataNotif.length+"</sup>"-->
+						<!--}-->
+						<!--$('#notifIcon').html(notifIcon);-->
+						<!--$('#isiNotif').html(getHtml);-->
+					<!--}-->
+				<!--}, false);-->
+
+				<!--source.addEventListener('open', function(e) {-->
+					<!--console.log('SSE Connection opened');-->
+				<!--}, false);-->
+
+				<!--source.addEventListener('error', function(e) {-->
+					<!--if (e.target.readyState == EventSource.CLOSED) {-->
+						<!--console.log('SSE disconnected');-->
+					<!--}else if (e.target.readyState == EventSource.CONNECTING)  {-->
+						<!--console.log('Connecting to SSE');-->
+					<!--}-->
+				<!--}, false);-->
+			<!--} else {-->
+				<!--console.log('Your browser does not support SSE');-->
+			<!--}-->
+		<!--</script>-->
+		{% block scripts %}{% endblock %}
+	</body>
+</html>
