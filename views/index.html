@@ -1,5 +1,22 @@
 {% extends "template.html" %}
 
+{% block css %}
+<style>
+    /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+    #marps {
+        height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+{% endblock %}
+
 {% block content %}
 
 <!-- Breadcrumb -->
@@ -133,14 +150,21 @@
         <div class="card">
             <div class="card-block">
                 <div class="row">
-                    <div class="col-xs-5">
+                    <div class="col-xs-7">
                         <h4 class="card-title">AGD Stations Map</h4>
                         <div class="small text-muted" style="margin-top:-10px;">07 November 2016</div>
+                    </div>
+                    <div class="col-xs-5">
+                        <img src="http://maps.google.com/mapfiles/marker_black.png" width="24px" height="40dp"> Node Street Route
+                        <img src="http://maps.google.com/mapfiles/marker_green.png" width="24px" height="40dp"> Ambulance Post
                     </div>
                 </div>
                 <div class="gm-map" id="dashboardmap">
                     <!--<canvas id="main-chart" height="300"></canvas>-->
                 </div>
+                <!--<div id="dashboardmap">-->
+                    <!--&lt;!&ndash;<canvas id="main-chart" height="300"></canvas>&ndash;&gt;-->
+                <!--</div>-->
             </div>
         </div>
 
@@ -632,18 +656,28 @@
 
 {% block scripts %}
 <script>
-    {% for data in stations%}
-    {% if data.is_pos == true %}
+    {% for datu in stations%}
+    {% if datu['is_pos'] == false %}
     $(function () {
         $('#dashboardmap')
                 .gmap3({
                     center: [-6.2146200, 106.8451300],
                     zoom: 10
                 })
-                .marker([
-                    {position: [{{ data.posisi.lat | safe}}, {{ data.posisi.lng | safe}}]},
-                    {icon: "http://maps.google.com/mapfiles/marker_red.png"}
-                ]);
+                .marker([{
+                    position: [{{ datu.posisi.lat | safe}}, {{ datu.posisi.lng | safe}}],
+                    icon: "http://maps.google.com/mapfiles/marker_black.png"}
+                ])
+                .on({
+                    // examples of use with a handler
+                    click: function (marker, event) {
+                        alert("nama: {{ datu.nama}}");
+                        if (marker.getAnimation() !== null) {
+                            marker.setAnimation(null);
+                        } else {
+                            marker.setAnimation(google.maps.Animation.BOUNCE);
+                        }                    }
+                });
     });
     {% else %}
     $(function () {
@@ -652,276 +686,96 @@
                     center: [-6.2146200, 106.8451300],
                     zoom: 10
                 })
-                .marker([
-                    {position: [{{ data.posisi.lat | safe}}, {{ data.posisi.lng | safe}}]},
-        {icon: "http://maps.google.com/mapfiles/marker_green.png"}
-        ]);
+                .marker([{
+                    position: [{{ datu.posisi.lat | safe}}, {{ datu.posisi.lng | safe}}],
+                    icon: "http://maps.google.com/mapfiles/marker_green.png"}
+                ])
+                .on({
+                    // examples of use with a handler
+                    click: function (marker, event) {
+                        alert("nama: {{ datu.nama}}");
+                        if (marker.getAnimation() !== null) {
+                            marker.setAnimation(null);
+                        } else {
+                            marker.setAnimation(google.maps.Animation.BOUNCE);
+                        }
+//                        marker.setAnimation(google.maps.Animation.BOUNCE);
+                    }
+                });
     });
     {% endif %}
     {% endfor %}
 
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.176813, 106.836745]},
-//                    {address: "", icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.182547, 106.865623]},
-//                    {address: "", icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.171560, 106.810187]},
-//                    {address: "", icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.155641, 106.904561]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.113030, 106.926287]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.129858, 106.861474]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.171137, 106.866119]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.121851, 106.886644]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.185308, 106.737795]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.214530, 106.724228]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.127051, 106.709118]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.149581, 106.776740]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.144374, 106.728240]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.235449, 106.856764]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.245153, 106.834104]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.249720, 106.778385]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.294899, 106.795493]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.352123, 106.813804]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.307787, 106.892743]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.314279, 106.894579]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.203294, 106.904999]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
-//
-//    $(function () {
-//        $('#dashboardmap')
-//                .gmap3({
-//                    center: [-6.2146200, 106.8451300],
-//                    zoom: 10
-//                })
-//                .marker([
-//                    {position: [-6.208924, 106.874306]},
-//                    {icon: "http://maps.google.com/mapfiles/marker_grey.png"}
-//                ]);
-//    });
+    function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+            marker.setAnimation(null);
+        } else {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+    }
 </script>
+
+<!--<script>-->
+
+    <!--// The following example creates a marker in Stockholm, Sweden using a DROP-->
+    <!--// animation. Clicking on the marker will toggle the animation between a BOUNCE-->
+    <!--// animation and no animation.-->
+
+    <!--{% for data in stations%}-->
+<!--//    {% if data['is_pos'] == false %}-->
+<!--//    var marker;-->
+<!--//    alert('hallo');-->
+<!--//-->
+<!--//    function initMap() {-->
+<!--//        var map = new google.maps.Map(document.getElementById('dashboardmap'), {-->
+<!--//            zoom: 11,-->
+<!--//            center: {lat: -6.2146200, lng: 106.8451300}-->
+<!--//        });-->
+<!--//-->
+<!--//        marker = new google.maps.Marker({-->
+<!--//            map: map,-->
+<!--//            draggable: true,-->
+<!--//            animation: google.maps.Animation.DROP,-->
+<!--//            position: {lat: {{ data.posisi.lat | safe}}, lng: {{ data.posisi.lng | safe}}},-->
+<!--//            icon: "http://maps.google.com/mapfiles/marker_black.png"-->
+<!--//        });-->
+<!--//        marker.addListener('click', toggleBounce);-->
+<!--//    }-->
+<!--//-->
+<!--//    function toggleBounce() {-->
+<!--//        if (marker.getAnimation() !== null) {-->
+<!--//            marker.setAnimation(null);-->
+<!--//        } else {-->
+<!--//            marker.setAnimation(google.maps.Animation.BOUNCE);-->
+<!--//        }-->
+<!--//    }-->
+<!--//    {% else %}-->
+    <!--var marker;-->
+
+    <!--window.initMap = function() {-->
+        <!--var map = new google.maps.Map(document.getElementById('dashboardmap'), {-->
+            <!--zoom: 11,-->
+            <!--center: {lat: -6.2146200, lng: 106.8451300}-->
+        <!--});-->
+
+        <!--marker = new google.maps.Marker({-->
+            <!--map: map,-->
+            <!--draggable: true,-->
+            <!--animation: google.maps.Animation.DROP,-->
+            <!--position: {lat: {{ data.posisi.lat | safe}}, lng: {{ data.posisi.lng | safe}}},-->
+        <!--icon: "http://maps.google.com/mapfiles/marker_green.png"-->
+    <!--});-->
+        <!--marker.addListener('click', toggleBounce);-->
+    <!--};-->
+
+    <!--function toggleBounce() {-->
+        <!--if (marker.getAnimation() !== null) {-->
+            <!--marker.setAnimation(null);-->
+        <!--} else {-->
+            <!--marker.setAnimation(google.maps.Animation.BOUNCE);-->
+        <!--}-->
+    <!--}-->
+<!--//    {% endif %}-->
+    <!--{% endfor %}-->
+<!--</script>-->
 {% endblock %}
