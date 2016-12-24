@@ -22,6 +22,11 @@ router.get('/', auth.check, wrap(function *(req, res, next) {
     var orderLength = ambulansOrder.length;
     var masyarakatLength = masyarakat.length;
 
+    var firstPos = ambulansStations[23];
+
+    console.log("testa "+JSON.stringify(firstPos));
+    // +" "+firstPos.posisi.lat+" "+firstPos.is_pos);
+
     res.render('index', {
         stations: ambulansStations,
         order: ambulansOrder,

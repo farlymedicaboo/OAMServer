@@ -633,6 +633,7 @@
 {% block scripts %}
 <script>
     {% for data in stations%}
+    {% if data.is_pos == true %}
     $(function () {
         $('#dashboardmap')
                 .gmap3({
@@ -640,10 +641,23 @@
                     zoom: 10
                 })
                 .marker([
-                    {position: [{{ data.latitude | safe}}, {{ data.longitude | safe}}]},
+                    {position: [{{ data.posisi.lat | safe}}, {{ data.posisi.lng | safe}}]},
                     {icon: "http://maps.google.com/mapfiles/marker_red.png"}
                 ]);
     });
+    {% else %}
+    $(function () {
+        $('#dashboardmap')
+                .gmap3({
+                    center: [-6.2146200, 106.8451300],
+                    zoom: 10
+                })
+                .marker([
+                    {position: [{{ data.posisi.lat | safe}}, {{ data.posisi.lng | safe}}]},
+        {icon: "http://maps.google.com/mapfiles/marker_green.png"}
+        ]);
+    });
+    {% endif %}
     {% endfor %}
 
 //    $(function () {
