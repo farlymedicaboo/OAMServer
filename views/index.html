@@ -610,6 +610,7 @@
 
                         <tbody>
                         {% for data in stations %}
+                        {% if data.is_pos %}
                         <tr>
                             <td class="text-xs-center">
                                 <strong>{{ data.nama }}</strong>
@@ -637,6 +638,7 @@
                                 <div>{{ data.telepon }}</div>
                             </td>
                         </tr>
+                        {% endif %}
                         {% endfor %}
                         </tbody>
                     </table>
@@ -671,7 +673,7 @@
                 .on({
                     // examples of use with a handler
                     click: function (marker, event) {
-                        alert("nama: {{ datu.nama}}");
+                        alert("nama: {{ datu.nama}}, vertex :+ {{ datu.vertex | safe}}");
                         if (marker.getAnimation() !== null) {
                             marker.setAnimation(null);
                         } else {
@@ -693,7 +695,7 @@
                 .on({
                     // examples of use with a handler
                     click: function (marker, event) {
-                        alert("nama: {{ datu.nama}}");
+                        alert("nama: {{ datu.nama}}, vertex : {{ datu.vertex | safe}}");
                         if (marker.getAnimation() !== null) {
                             marker.setAnimation(null);
                         } else {

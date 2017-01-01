@@ -3,7 +3,8 @@ var express = require('express'),
     wrap = require('co-express'),
     co = require('co'),
     multiparty = require('connect-multiparty'),
-    multipartyMiddleware = multiparty();
+    multipartyMiddleware = multiparty(),
+    moment = require('moment');
 
 router.use(multipartyMiddleware);
 
@@ -69,10 +70,20 @@ router.get('/handledorder', auth.check, wrap(function *(req, res, next) {
 }));
 
 /* GET prank order. */
-router.get('/prankorder', auth.check, wrap(function *(req, res, next) {
-    var orders = yield PesanAmbulans.find({status: "prank"});
+router.get('/outofcoverageorder', auth.check, wrap(function *(req, res, next) {
+    var orders = yield PesanAmbulans.find({status: "outofcoverage"});
 
-    res.render('prankorder', {
+    res.render('outofcoverageorder', {
+        order: orders
+    });
+
+}));
+
+/* GET prank order. */
+router.get('/declinedorder', auth.check, wrap(function *(req, res, next) {
+    var orders = yield PesanAmbulans.find({status: "declined"});
+
+    res.render('declinedorder', {
         order: orders
     });
 
@@ -184,5 +195,20 @@ router.post('/daftar', wrap(function *(req, res, next) {
 
 }));
 //Register
+
+//Declined
+router.get('/setdeclined/:id', auth.check, function (req, res, next) {
+    // var orders = yield PesanAmbulans.find({status: "handled"});
+
+    PesanAmbulans.findById(req.params.id, function (err, pesan) {
+
+        pesan.status = 'declined';
+        pesan.save(function (err, updatedTank) {
+            if (err) return handleError(err);
+            res.redirect('/');
+        });
+    });
+    
+});
 
 module.exports = router;

@@ -23,6 +23,7 @@
 
                         <tbody>
                         {% for data in stations %}
+                        {% if data.is_pos %}
                         <tr>
                             <td class="text-xs-center">
                                 <strong>{{ data.nama }}</strong>
@@ -50,6 +51,7 @@
                                 <div>{{ data.telepon }}</div>
                             </td>
                         </tr>
+                        {% endif %}
                         {% endfor %}
                         </tbody>
                     </table>

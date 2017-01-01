@@ -15,9 +15,11 @@
                         <thead class="thead-default">
                         <tr>
                             <th>Date</th>
+                            <th>Time</th>
                             <th>Address</th>
                             <th>Latitude Longitude</th>
                             <th>Status</th>
+                            <th>Set Status</th>
                         </tr>
                         </thead>
 
@@ -27,14 +29,19 @@
                             <td>
                                 <div>{{ data.tanggal }}</div>
                             </td>
+                            <td>
+                                <strong>{{ data.waktu }}</strong>
+                            </td>
                             <td class="text-xs-center">
-                                <strong>{{ data.alamat_masyarakat }}</strong>
+                                <div>{{ data.alamat_masyarakat }}</div>
                             </td>
                             <td>
                                 <strong class="text-muted">{{ data.latitude }}, {{ data.longitude }}</strong>
                             </td>
                             <td><strong class="text-muted">{{ data.status }}</strong></td>
-
+                            <!--{% if data.status == "unhandled" or data.status == "handled %}-->
+                            <td><a type="button" class="btn btn-danger btn-sm" href="/setdeclined">Decline Order</a></td>
+                            <!--{% endif %}-->
                         </tr>
                         {% endfor %}
                         </tbody>

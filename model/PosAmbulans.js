@@ -11,6 +11,7 @@ var posAmbulansSchema = new mongoose.Schema({
     telepon: String,
     wilayah: String,
     posisi: Object,
-    is_pos: Boolean
+    is_pos: Boolean,
+    vertex: Array
 },{ collection: 'PosAmbulans' });
 module.exports = mongoose.model('PosAmbulans', posAmbulansSchema);
