@@ -28,7 +28,7 @@
                         {% for data in order %}
                         <tr>
                             <td>
-                                <div>{{ data.tanggal }}</div>
+                                <div>{{ data.tanggal | toDate }}</div>
                             </td>
                             <td>
                                 <strong>{{ data.waktu }}</strong>

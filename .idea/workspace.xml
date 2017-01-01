@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfaa5614-6038-4d9e-b2e1-d8ebb1ec277d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/template.html" afterPath="$PROJECT_DIR$/views/template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/allorder.html" afterPath="$PROJECT_DIR$/views/allorder.html" />
     </list>
     <ignored path="oamserver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,8 +47,8 @@
       <file leaf-file-name="allorder.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/allorder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+            <state relative-caret-position="150">
+              <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -57,18 +57,18 @@
       <file leaf-file-name="unhandledorder.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/unhandledorder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="42" column="95" selection-start-line="42" selection-start-column="95" selection-end-line="42" selection-end-column="95" />
+            <state relative-caret-position="300">
+              <caret line="29" column="61" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="template.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
+            <state relative-caret-position="270">
+              <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,7 +104,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="declinedorder.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="declinedorder.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/declinedorder.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -173,8 +173,8 @@
         <option value="$PROJECT_DIR$/views/outofcoverageorder.html" />
         <option value="$PROJECT_DIR$/views/unhandledorder.html" />
         <option value="$PROJECT_DIR$/views/handledorder.html" />
-        <option value="$PROJECT_DIR$/views/allorder.html" />
         <option value="$PROJECT_DIR$/views/template.html" />
+        <option value="$PROJECT_DIR$/views/allorder.html" />
       </list>
     </option>
   </component>
@@ -372,12 +372,12 @@
       <workItem from="1482659393324" duration="582000" />
       <workItem from="1482819790569" duration="11000" />
       <workItem from="1482820736194" duration="11000" />
-      <workItem from="1483252764922" duration="8381000" />
+      <workItem from="1483252764922" duration="8567000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104298000" />
+    <option name="totallyTimeSpent" value="104484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="23" width="1280" height="712" extended-state="6" />
@@ -590,26 +590,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/outofcoverageorder.html">
+    <entry file="file://$PROJECT_DIR$/views/template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+        <state relative-caret-position="270">
+          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/declinedorder.html">
+    <entry file="file://$PROJECT_DIR$/views/allorder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="28" column="64" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="64" />
+        <state relative-caret-position="150">
+          <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/unhandledorder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="42" column="95" selection-start-line="42" selection-start-column="95" selection-end-line="42" selection-end-column="95" />
+        <state relative-caret-position="300">
+          <caret line="29" column="61" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/outofcoverageorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -622,18 +630,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/allorder.html">
+    <entry file="file://$PROJECT_DIR$/views/declinedorder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
+        <state relative-caret-position="300">
+          <caret line="28" column="64" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="64" />
           <folding />
         </state>
       </provider>
