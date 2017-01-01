@@ -1,4 +1,8 @@
+	
+var moment = require('moment');
+
 module.exports = {
+	
 	toTime: function(str) {
 	    var res = str.toString();
 
@@ -10,5 +14,9 @@ module.exports = {
 
 	    res.splice(2, 0, ':');
 	    return res.join("");
+	},
+
+	toDate: function(str) {
+		return moment(str).format('YYYY-MM-DD')
 	}
 };

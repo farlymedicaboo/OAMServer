@@ -200,13 +200,21 @@ router.post('/daftar', wrap(function *(req, res, next) {
 router.get('/setdeclined/:id', auth.check, function (req, res, next) {
     // var orders = yield PesanAmbulans.find({status: "handled"});
 
-    PesanAmbulans.findById(req.params.id, function (err, pesan) {
+    // PesanAmbulans.findById(req.params.id, function (err, pesan) {
+    //     console.log("testa hehehehe "+JSON.stringify(pesan));
+    //
+    //     pesan.status = 'declined';
+    //     pesan.save(function (err, updatedTank) {
+    //         console.log("testb "+JSON.stringify(updatedTank));
+    //
+    //         // res.redirect('/');
+    //     });
+    // });
 
-        pesan.status = 'declined';
-        pesan.save(function (err, updatedTank) {
-            if (err) return handleError(err);
-            res.redirect('/');
-        });
+    PesanAmbulans.update({ _id: req.params.id }, { $set: { status: 'declined' }}, function (err, data) {
+        console.log("testc "+JSON.stringify(data));
+        res.redirect('/');
+
     });
     
 });

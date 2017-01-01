@@ -26,13 +26,13 @@
                         {% for data in order %}
                         <tr>
                             <td>
-                                <div>{{ data.tanggal }}</div>
+                                <div>{{ data.tanggal | toDate }}</div>
                             </td>
                             <td>
                                 <strong>{{ data.waktu }}</strong>
                             </td>
                             <td class="text-xs-center">
-                                <strong>{{ data.alamat_masyarakat }}</strong>
+                                <div>{{ data.alamat_masyarakat }}</div>
                             </td>
                             <td>
                                 <strong class="text-muted">{{ data.latitude }}, {{ data.longitude }}</strong>
