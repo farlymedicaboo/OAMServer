@@ -11,6 +11,8 @@ var pesanAmbulansSchema = new mongoose.Schema({
   keterangan: String,
   tanggal: String,
   status: String,
+  waktu: String,
+  pos: String,
   masyarakatId: { type: mongoose.Schema.Types.ObjectId, ref: 'Masyarakat' }
 },{ collection: 'PesanAmbulans' });
 module.exports = mongoose.model('PesanAmbulans', pesanAmbulansSchema);

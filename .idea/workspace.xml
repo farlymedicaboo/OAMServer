@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfaa5614-6038-4d9e-b2e1-d8ebb1ec277d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/allorder.html" afterPath="$PROJECT_DIR$/views/allorder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/PesanAmbulans.js" afterPath="$PROJECT_DIR$/model/PesanAmbulans.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
     </list>
     <ignored path="oamserver.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,21 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="31" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="31" />
+            <state relative-caret-position="-1710">
+              <caret line="63" column="93" selection-start-line="63" selection-start-column="93" selection-end-line="63" selection-end-column="93" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/index.html">
+      <file leaf-file-name="PesanAmbulans.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/PesanAmbulans.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="612" column="24" selection-start-line="612" selection-start-column="24" selection-end-line="612" selection-end-column="44" />
+            <state relative-caret-position="165">
+              <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -47,7 +49,7 @@
       <file leaf-file-name="allorder.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/allorder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="45">
               <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
               <folding />
             </state>
@@ -57,7 +59,7 @@
       <file leaf-file-name="unhandledorder.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/unhandledorder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="435">
               <caret line="29" column="61" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="61" />
               <folding />
             </state>
@@ -67,7 +69,7 @@
       <file leaf-file-name="template.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="2025">
               <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
               <folding />
             </state>
@@ -87,7 +89,7 @@
       <file leaf-file-name="outofcoverageorder.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/outofcoverageorder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="510">
               <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
               <folding />
             </state>
@@ -97,18 +99,18 @@
       <file leaf-file-name="handledorder.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/handledorder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="675">
               <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="47" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="declinedorder.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="declinedorder.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/declinedorder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="28" column="64" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="64" />
+            <state relative-caret-position="465">
+              <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -152,7 +154,6 @@
         <option value="$PROJECT_DIR$/common/pesan_ambulans.js" />
         <option value="$PROJECT_DIR$/common/request.js" />
         <option value="$PROJECT_DIR$/model/Masyarakat.js" />
-        <option value="$PROJECT_DIR$/model/PesanAmbulans.js" />
         <option value="$PROJECT_DIR$/views/prankorder.html" />
         <option value="$PROJECT_DIR$/views/users.html" />
         <option value="$PROJECT_DIR$/common/auth.js" />
@@ -166,15 +167,16 @@
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/views/agd-station.html" />
         <option value="$PROJECT_DIR$/public/bower.json" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/common/nunjucksFilter.js" />
-        <option value="$PROJECT_DIR$/views/declinedorder.html" />
         <option value="$PROJECT_DIR$/views/outofcoverageorder.html" />
         <option value="$PROJECT_DIR$/views/unhandledorder.html" />
         <option value="$PROJECT_DIR$/views/handledorder.html" />
         <option value="$PROJECT_DIR$/views/template.html" />
         <option value="$PROJECT_DIR$/views/allorder.html" />
+        <option value="$PROJECT_DIR$/views/declinedorder.html" />
+        <option value="$PROJECT_DIR$/model/PesanAmbulans.js" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
       </list>
     </option>
   </component>
@@ -185,9 +187,11 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="712" />
@@ -217,6 +221,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -274,13 +279,26 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oamserver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oamserver" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="common" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -341,6 +359,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="bfaa5614-6038-4d9e-b2e1-d8ebb1ec277d" name="Default" comment="" />
@@ -372,15 +393,17 @@
       <workItem from="1482659393324" duration="582000" />
       <workItem from="1482819790569" duration="11000" />
       <workItem from="1482820736194" duration="11000" />
-      <workItem from="1483252764922" duration="8567000" />
+      <workItem from="1483252764922" duration="8632000" />
+      <workItem from="1483273532675" duration="23000" />
+      <workItem from="1483276614910" duration="245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104484000" />
+    <option name="totallyTimeSpent" value="104817000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="23" width="1280" height="712" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="712" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18012924" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -404,6 +427,14 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -416,6 +447,166 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9180">
+          <caret line="612" column="24" selection-start-line="612" selection-start-column="24" selection-end-line="612" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/allorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/unhandledorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="61" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2025">
+          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/outofcoverageorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/handledorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="47" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/declinedorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/nunjucksFilter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9180">
+          <caret line="612" column="24" selection-start-line="612" selection-start-column="24" selection-end-line="612" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/allorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/unhandledorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="61" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2025">
+          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/outofcoverageorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/handledorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="47" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/declinedorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/nunjucksFilter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
           <folding />
@@ -426,7 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -442,7 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="68" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -450,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="33" column="115" selection-start-line="33" selection-start-column="115" selection-end-line="33" selection-end-column="115" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -458,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -466,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -482,7 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -490,7 +675,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -498,7 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -506,7 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="68" selection-start-line="42" selection-start-column="68" selection-end-line="42" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -514,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -522,7 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -530,7 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -538,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -546,7 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="56" column="40" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -554,13 +731,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="53" column="35" selection-start-line="53" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state relative-caret-position="9180">
           <caret line="612" column="24" selection-start-line="612" selection-start-column="24" selection-end-line="612" selection-end-column="44" />
           <folding />
         </state>
@@ -570,14 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -592,23 +760,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/template.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="2025">
           <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/allorder.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/unhandledorder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="435">
           <caret line="29" column="61" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="61" />
           <folding />
         </state>
@@ -616,7 +776,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/outofcoverageorder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="510">
           <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
           <folding />
         </state>
@@ -624,7 +784,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/handledorder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="675">
           <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="47" selection-end-column="33" />
           <folding />
         </state>
@@ -632,8 +792,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/declinedorder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="28" column="64" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="64" />
+        <state relative-caret-position="465">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/allorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/PesanAmbulans.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1710">
+          <caret line="63" column="93" selection-start-line="63" selection-start-column="93" selection-end-line="63" selection-end-column="93" />
           <folding />
         </state>
       </provider>
