@@ -39,7 +39,9 @@ router.get('/', auth.check, wrap(function *(req, res, next) {
 
 /* GET all order. */
 router.get('/allorder', auth.check, wrap(function *(req, res, next) {
-    var orders = yield PesanAmbulans.find({}).sort([['_id', 'descending']]);
+    var orders = yield PesanAmbulans.find({}).sort([['_id', 'descending']]).populate('masyarakatId').exec();
+
+    console.log("testa "+JSON.stringify(orders));
 
     res.render('allorder', {
         order: orders
@@ -50,7 +52,7 @@ router.get('/allorder', auth.check, wrap(function *(req, res, next) {
 
 /* GET unhandled order. */
 router.get('/unhandledorder', auth.check, wrap(function *(req, res, next) {
-    var orders = yield PesanAmbulans.find({status: "unhandled"}).sort([['_id', 'descending']]);
+    var orders = yield PesanAmbulans.find({status: "unhandled"}).sort([['_id', 'descending']]).populate('masyarakatId').exec();;
 
     res.render('unhandledorder', {
         order: orders
@@ -61,7 +63,7 @@ router.get('/unhandledorder', auth.check, wrap(function *(req, res, next) {
 
 /* GET handled order. */
 router.get('/handledorder', auth.check, wrap(function *(req, res, next) {
-    var orders = yield PesanAmbulans.find({status: "handled"}).sort([['_id', 'descending']]);
+    var orders = yield PesanAmbulans.find({status: "handled"}).sort([['_id', 'descending']]).populate('masyarakatId').exec();;
 
     res.render('handledorder', {
         order: orders
@@ -71,7 +73,7 @@ router.get('/handledorder', auth.check, wrap(function *(req, res, next) {
 
 /* GET prank order. */
 router.get('/outofcoverageorder', auth.check, wrap(function *(req, res, next) {
-    var orders = yield PesanAmbulans.find({status: "outofcoverage"}).sort([['_id', 'descending']]);
+    var orders = yield PesanAmbulans.find({status: "outofcoverage"}).sort([['_id', 'descending']]).populate('masyarakatId').exec();;
 
     res.render('outofcoverageorder', {
         order: orders
@@ -81,7 +83,7 @@ router.get('/outofcoverageorder', auth.check, wrap(function *(req, res, next) {
 
 /* GET prank order. */
 router.get('/declinedorder', auth.check, wrap(function *(req, res, next) {
-    var orders = yield PesanAmbulans.find({status: "declined"}).sort([['_id', 'descending']]);
+    var orders = yield PesanAmbulans.find({status: "declined"}).sort([['_id', 'descending']]).populate('masyarakatId').exec();;
 
     res.render('declinedorder', {
         order: orders

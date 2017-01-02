@@ -17,7 +17,10 @@
                             <th>Date</th>
                             <th>Time</th>
                             <th>Address</th>
-                            <th>Latitude Longitude</th>
+                            <th>Disease</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
                             <th>Status</th>
                             <th>Set Status</th>
                         </tr>
@@ -36,13 +39,23 @@
                                 <div>{{ data.alamat_masyarakat }}</div>
                             </td>
                             <td>
-                                <strong class="text-muted">{{ data.latitude }}, {{ data.longitude }}</strong>
+                                <strong class="text-muted">{{ data.keterangan }}</strong>
+                            </td>
+                            <td>
+                                <strong class="text-muted">{{ data.masyarakatId.nama_masyarakat }}</strong>
+                            </td>
+                            <td>
+                                <strong class="text-muted">{{ data.masyarakatId.email }}</strong>
+                            </td>
+                            <td>
+                                <strong class="text-muted">{{ data.masyarakatId.nomor_hp_masyarakat }}</strong>
                             </td>
                             <td><strong class="text-muted">{{ data.status }}</strong></td>
                             <td>
+                                {% if data.status == "unhandled" or data.status == "handled" %}
                                 <button onclick="window.location='/setdeclined/{{ data.id }}';" type="button" class="btn btn-danger btn-sm" href="/setdeclined/{{ data.id }}">Decline Order</button>
+                                {% endif %}
                             </td>
-
                         </tr>
                         {% endfor %}
                         </tbody>

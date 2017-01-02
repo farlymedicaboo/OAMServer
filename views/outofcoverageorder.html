@@ -17,7 +17,10 @@
                             <th>Date</th>
                             <th>Time</th>
                             <th>Address</th>
-                            <th>Latitude Longitude</th>
+                            <th>Disease</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
                             <th>Status</th>
                         </tr>
                         </thead>
@@ -35,10 +38,18 @@
                                 <div>{{ data.alamat_masyarakat }}</div>
                             </td>
                             <td>
-                                <strong class="text-muted">{{ data.latitude }}, {{ data.longitude }}</strong>
+                                <strong class="text-muted">{{ data.keterangan }}</strong>
+                            </td>
+                            <td>
+                                <strong class="text-muted">{{ data.masyarakatId.nama_masyarakat }}</strong>
+                            </td>
+                            <td>
+                                <strong class="text-muted">{{ data.masyarakatId.email }}</strong>
+                            </td>
+                            <td>
+                                <strong class="text-muted">{{ data.masyarakatId.nomor_hp_masyarakat }}</strong>
                             </td>
                             <td><strong class="text-muted">{{ data.status }}</strong></td>
-
                         </tr>
                         {% endfor %}
                         </tbody>
