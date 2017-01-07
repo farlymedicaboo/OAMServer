@@ -15,11 +15,9 @@
                         <thead class="thead-default">
                         <tr>
                             <th>Date</th>
-                            <th>Time</th>
                             <th>Address</th>
                             <th>Disease</th>
                             <th>Name</th>
-                            <th>Email</th>
                             <th>Phone</th>
                             <th>Status</th>
                             <th>Set Status</th>
@@ -31,11 +29,9 @@
                         <tr>
                             <td>
                                 <div>{{ data.tanggal | toDate }}</div>
-                            </td>
-                            <td>
                                 <strong>{{ data.waktu }}</strong>
                             </td>
-                            <td class="text-xs-center">
+                            <td class="text-muted">
                                 <div>{{ data.alamat_masyarakat }}</div>
                             </td>
                             <td>
@@ -45,14 +41,12 @@
                                 <strong class="text-muted">{{ data.masyarakatId.nama_masyarakat }}</strong>
                             </td>
                             <td>
-                                <strong class="text-muted">{{ data.masyarakatId.email }}</strong>
-                            </td>
-                            <td>
                                 <strong class="text-muted">{{ data.masyarakatId.nomor_hp_masyarakat }}</strong>
                             </td>
                             <td><strong class="text-muted">{{ data.status }}</strong></td>
                             <td>
                                 {% if data.status == "unhandled" or data.status == "handled" %}
+                                <button onclick="window.location='/sethandled/{{ data.id }}';" type="button" class="btn btn-success btn-sm" href="/sethandled/{{ data.id }}">Handle Order</button>
                                 <button onclick="window.location='/setdeclined/{{ data.id }}';" type="button" class="btn btn-danger btn-sm" href="/setdeclined/{{ data.id }}">Decline Order</button>
                                 {% endif %}
                             </td>

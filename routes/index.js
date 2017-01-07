@@ -25,7 +25,7 @@ router.get('/', auth.check, wrap(function *(req, res, next) {
 
     var firstPos = ambulansStations[23];
 
-    console.log("testa "+JSON.stringify(firstPos));
+    console.log("testjj "+JSON.stringify(firstPos));
     // +" "+firstPos.posisi.lat+" "+firstPos.is_pos);
 
     res.render('index', {
@@ -39,9 +39,9 @@ router.get('/', auth.check, wrap(function *(req, res, next) {
 
 /* GET all order. */
 router.get('/allorder', auth.check, wrap(function *(req, res, next) {
-    var orders = yield PesanAmbulans.find({}).sort([['_id', 'descending']]).populate('masyarakatId').exec();
+    var orders = yield PesanAmbulans.find().sort([['_id', 'descending']]).populate('masyarakatId').exec();
 
-    console.log("testa "+JSON.stringify(orders));
+    console.log("testgg "+JSON.stringify(orders));
 
     res.render('allorder', {
         order: orders
@@ -219,6 +219,17 @@ router.get('/setdeclined/:id', auth.check, function (req, res, next) {
 
     });
     
+});
+
+//Handled
+router.get('/sethandled/:id', auth.check, function (req, res, next) {
+
+    PesanAmbulans.update({ _id: req.params.id }, { $set: { status: 'handled' }}, function (err, data) {
+        console.log("testr "+JSON.stringify(data));
+        res.redirect('/');
+
+    });
+
 });
 
 module.exports = router;
